@@ -1,0 +1,51 @@
+# --- General ---
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Deno Specific ---
+# Deno dependency cache (often configured via DENO_DIR env var, but .deno/ is a common local convention)
+.deno/
+
+# Test coverage reports
+coverage/
+
+# Compiled executables (if using `deno compile`) - adjust if needed
+/dist/
+/build/
+# *.exe # Uncomment if you compile directly to root
+
+# Lock file - IMPORTANT: You SHOULD typically commit deno.lock to ensure reproducible dependencies!
+# Only uncomment the line below if you have a specific reason NOT to track dependencies precisely.
+# deno.lock
+
+# --- Project Specific ---
+# Environment variables - Contains secrets!
+.env
+.env.*
+!.env.example
+!.env.template # Or similar template files you WANT to commit
+
+# Log files
+*.log
+logs/
+
+# Node.js dependencies (if you happen to use npm/yarn/pnpm alongside Deno for tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Hono Specific (Usually covered by General/Deno) ---
+# Hono itself doesn't typically generate many ignore-worthy files.
+# Add any project-specific build outputs, temporary files, or data directories here.
+# Example:
+# /public/uploads/ # If you have user uploads stored locally during dev
+# session_data/    # If you store session files locally
