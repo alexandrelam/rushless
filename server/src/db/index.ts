@@ -1,5 +1,15 @@
-import 'dotenv/config';
-import { drizzle } from 'drizzle-orm/node-postgres';
-import process from "node:process";
+import { drizzle } from "drizzle-orm/node-postgres";
+import pg from "pg";
+import { schema } from "./schema.ts";
 
-const db = drizzle(process.env.DATABASE_URL!);
+
+// Use pg driver.
+const { Pool } = pg;
+
+// Instantiate Drizzle client with pg driver and schema.
+export const db = drizzle({
+    client: new Pool({
+        connectionString: Deno.env.get("DATABASE_URL"),
+    }),
+    schema: { schema },
+});

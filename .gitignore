@@ -25,6 +25,10 @@ coverage/
 # Only uncomment the line below if you have a specific reason NOT to track dependencies precisely.
 # deno.lock
 
+# --- Drizzle ORM Specific ---
+# Drizzle internal metadata (contains generated migration files)
+/drizzle/meta/
+
 # --- Project Specific ---
 # Environment variables - Contains secrets!
 .env

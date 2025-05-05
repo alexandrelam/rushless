@@ -1,14 +1,16 @@
 {
   "imports": {
     "@types/pg": "npm:@types/pg@^8.11.14",
-    "dotenv": "npm:dotenv@^16.5.0",
-    "drizzle-kit": "npm:drizzle-kit@^0.31.1",
     "drizzle-orm": "npm:drizzle-orm@^0.43.1",
+    "drizzle-orm/postgres-js": "npm:drizzle-orm/postgres-js",
+    "drizzle-kit": "npm:drizzle-kit@^0.31.1",
     "hono": "jsr:@hono/hono@^4.7.8",
-    "tsx": "npm:tsx@^4.19.4"
+    "pg": "npm:pg@^8.15.6"
   },
   "tasks": {
-    "start": "deno run --allow-net main.ts"
+    "start": "deno run --allow-net main.ts",
+    "migrate:generate": "deno run -A --node-modules-dir npm:drizzle-kit generate",
+    "migrate": "deno run -A --node-modules-dir npm:drizzle-kit migrate"
   },
   "compilerOptions": {
     "jsx": "precompile",
